@@ -1,0 +1,82 @@
+@import "../../SCSS/CommonSCSS/mixins.scss";
+
+// Left Sidebar
+#{$proposal}LeftSidebar {
+    background: $white;
+    @include box-shadow(6px 6px 10px -3px rgba($black, 0.06));
+    text-align: center;
+    padding-top: 32px !important;
+    max-width: 300px !important;
+    min-height: calc(100vh - 48px);
+    z-index: 91;
+
+    h5 {
+        margin-bottom: 4px;
+        @include fontSize(16px);
+        font-weight: 600;
+        // display: inline-flex;
+        align-items: center;
+
+        svg {
+            width: 17px;
+        }
+    }
+
+    h6 {
+        @include fontSize(14px);
+        font-weight: 400;
+    }
+
+    p {
+        @include fontSize(12px);
+        color: rgba($black, 0.4);
+    }
+
+    $othericons: healthIcon, carIcon, bikeIcon, investmentIcon, termIcon,
+        travelIcon, homeIcon, shopIcon, ciIcon;
+    $k: 0;
+
+    @each $icons in $othericons {
+        $bacRightP: $k * 100;
+        $k: $k +1;
+
+        .#{$icons} {
+            background: url("../../../public/images/mainProductIcons.svg") no-repeat -#{$bacRightP}px 0px/1000px;
+            display: block;
+            margin: 0px auto 16px;
+            height: 100px;
+            width: 100px;
+        }
+    }
+
+    .insurerLogo {
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .premium {
+        color: $secondary;
+        @include fontSize(20px);
+
+        svg {
+            width: 18px;
+        }
+    }
+    .vehicle_number {
+        border: 1px solid rgba($black, 0.1);
+        border-radius: 6px;
+        padding: 4px 10px 4px 28px;
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        &:before {
+            @include position(absolute, $top: 0, $left: 0);
+            content: "";
+            background: url("./../../../public/images/ind.svg") no-repeat 0 0 /22px;
+            width: 40px;
+            height: 44px;
+            @include border-radius(5px 0px 0px 5px);
+            z-index: 4;
+        }
+    }
+}

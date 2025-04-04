@@ -1,0 +1,1528 @@
+@import "./mixins.scss";
+ 
+.bimastreet-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #00b587;
+    }
+  }
+ 
+  // .ctaBtn {
+  //   .greenSmBtn,
+  //   .mediumPrimaryBtn,
+  //   .regularPrimaryBtn {
+  //     background: $theme-lightgreen;
+  //     text-transform: capitalize;
+  //     padding: 10px 24px;
+  //     box-shadow: none;
+  //     border-radius: 12px;
+  //   }
+  // }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #00b587 !important;
+      color: #fff;
+      font-weight: 500;
+      border-radius: 12px;
+      border: none;
+ 
+      &:hover {
+        background: rgba(#00b587, 0.7) !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+ 
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      background: #203864 !important;
+      color: $white;
+      font-weight: 500;
+      border-radius: 12px;
+      border: none;
+ 
+      &:hover {
+        background: rgba(#203864, 0.7) !important;
+      }
+ 
+      svg {
+        fill: #fff !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .tertiaryBtn {
+    button {
+      color: #00785a;
+      font-weight: 500;
+      background: none;
+ 
+      &:hover {
+        color: $theme-green !important;
+        background: none !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+        line-height: 14px;
+        height: 20px;
+        padding: 0px;
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: $theme-lightgreen;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: $grey;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: $theme-lightgreen;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: rgba($theme-blue, 0.03);
+    }
+  }
+ 
+  .insuredMembers {
+    input:checked+label::before {
+      background-color: $theme-lightgreen;
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+ 
+    .proposalPreview {
+      .previewBoxEdit {
+        background: $theme-blue;
+        color: $white;
+      }
+    }
+  }
+ 
+  .proposalWrapper_m {
+    background: rgba(#1e71ec, 0.04);
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: $theme-lightgreen;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.clickpolicy-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #2b7bbf;
+    }
+  }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #2b7bbf !important;
+      color: $white;
+      border-radius: 100px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+ 
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #e57327 !important;
+      color: #e57327 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 100px;
+      outline: 1px solid;
+ 
+      &:hover {
+        color: #e57327 !important;
+        background: rgba(#e57327, 0.1) !important;
+      }
+ 
+      svg {
+        fill: #e57327 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .tertiaryBtn {
+    button {
+      color: #e57327;
+      font-weight: 500;
+ 
+      &:hover {
+        color: #e57327 !important;
+        background: rgba(#e57327, 0.1) !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+        line-height: 14px;
+        height: 20px;
+        padding: 0px;
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #2b7bbf;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #e57327;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #2b7bbf;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: lighten(#2b7bbf, 50%);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalLeftSidebar .premium {
+    color: #e57327;
+  }
+ 
+  .proposalWrapper_m {
+    background: rgba(#1e71ec, 0.04);
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #2b7bbf;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.jio-insure {
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: $primary !important;
+      color: #2f2311;
+      font-weight: 700;
+      border-radius: 100px;
+      border: none;
+ 
+      svg {
+        .progress {
+          stroke: #2f2311;
+        }
+      }
+ 
+      &:hover {
+        background: rgba($primary, 0.5) !important;
+        color: #2f2311 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+ 
+      &.MuiButton-sizeLarge {
+        @include fontSize(16px);
+      }
+ 
+      svg {
+        fill: #fff !important;
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      background: none !important;
+      outline: 1px solid #b5b5b5;
+      outline-offset: -1px;
+      color: $darkgold;
+      font-weight: 700;
+      border-radius: 100px;
+      border: none;
+ 
+      &:hover,
+      &:active {
+        background-color: #fce0bd !important;
+        color: $darkgold !important;
+      }
+ 
+      svg {
+        fill: $darkgold !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .tertiaryBtn {
+    button {
+      color: #2f2311;
+      font-weight: 700;
+      background: none;
+      padding-left: 0px;
+      padding-right: 0px;
+ 
+      &:hover {
+        color: #2f2311 !important;
+        background: none !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+        line-height: 14px;
+        height: 20px;
+        padding: 0px;
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    border-color: $primary;
+ 
+    button {
+      &.Mui-selected {
+        background: $primary;
+      }
+    }
+  }
+ 
+  .evInputField,
+  .inputField {
+
+    .MuiFormLabel-root {
+      .Mui-error {
+        color: rgba(0, 0, 0, 0.6) !important;
+      }
+    }
+
+    label {
+      transform: translate(0px, 10px) scale(1) !important;
+      top: 3px;
+
+      &.Mui-error {
+        color: rgba(0, 0, 0, 0.6) !important;
+      }
+    }
+ 
+    .MuiInputLabel-shrink {
+      transform: translate(0px, -11px) scale(0.75) !important;
+      color: $lightgrey !important;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: $primary !important;
+      }
+    }
+ 
+    input {
+      padding-left: 0px !important;
+    }
+ 
+    .Mui-disabled {
+      background: rgba($primary, 0.03);
+    }
+ 
+    fieldset {
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-width: 2px !important;
+      border-radius: 0px !important;
+      border-color: rgba(#000, 0.65) !important;
+    }
+ 
+    .MuiAutocomplete-root {
+      &:before {
+        right: 4px !important;
+      }
+    }
+ 
+    .MuiOutlinedInput-root {
+      padding-left: 0px !important;
+ 
+      .MuiAutocomplete-input {
+        padding-left: 0px !important;
+      }
+    }
+ 
+    &.datepicker {
+      &:before {
+        right: 4px !important;
+      }
+    }
+ 
+    .MuiSelect-select {
+      padding-left: 0px !important;
+ 
+      &:before {
+        right: 4px !important;
+      }
+    }
+  }
+ 
+  .insuredMembers {
+    input:checked+label::before {
+      background-color: $primary !important;
+    }
+  }
+ 
+  .proposalNavbar {
+    background: #fef7ef;
+  }
+
+  .schedulPopup-btn {
+    button {
+        background: rgba(64, 29, 12, 1) !important;
+        color: $white !important;
+        &:hover{
+          background: rgba(64, 29, 12, 1) !important;
+          color: $white !important;
+        }
+
+        svg {
+          fill: rgb(255, 255, 255) !important;
+            margin-right: 4px;
+        }
+    }
+  }
+
+  .proposalWrapper {
+
+   
+    .proposalCheckBoxWrapper {
+      .MuiButtonBase-root {
+        &.Mui-checked {
+          &:before {
+            border-color: $primary;
+            background-color: $primary;
+          }
+ 
+          &:after {
+            border-color: $warmgold;
+          }
+        }
+      }
+    }
+ 
+    .proposalPreview {
+      .previewBoxEdit {
+        border-radius: 40px;
+        padding: 2px 8px;
+      }
+
+      .previewBox {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 16px;
+        box-shadow: none;
+
+        &.error_fill_details {
+          border: 1px solid #F50031;
+
+          .add_details_tagline {
+            color: #F50031;
+          }
+        }
+      }
+    }
+ 
+    .fieldbox {
+      .browsebtn {
+        border-radius: 0px;
+      }
+    }
+  }
+ 
+  .proposalWrapper_m {
+    background: $white;
+ 
+    .proposalCheckBoxWrapper {
+      .MuiButtonBase-root {
+        &.Mui-checked {
+          &:before {
+            border-color: $primary;
+            background-color: $primary;
+          }
+ 
+          &:after {
+            border-color: $warmgold;
+          }
+        }
+      }
+    }
+ 
+    .mProposalNavbar {
+      background: #fef7ef;
+      box-shadow: 0px 2px 8px rgba(#000, 0.1);
+      border: none;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .fieldbox {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: $white;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-bottom: 2px solid rgba($black, 0.65);
+      box-shadow: none;
+      @include border-radius(0px);
+    }
+ 
+    .browsebtn {
+      border-radius: 0px 8px 0px 0px !important;
+    }
+ 
+    .uploadField label,
+    fieldset,
+    input {
+      padding-left: 0px !important;
+    }
+ 
+    .mProposalFooter {
+      box-shadow: 0px -2px 8px rgba(#000, 0.1);
+      background: $white;
+      min-height: 64px;
+ 
+      &:before {
+        display: none;
+      }
+      &.mpreviewDetailsFooter {
+        .footerInner {
+          justify-content: space-between !important;
+          align-items: center;
+          .paymentInfo {
+            .prevPrice {
+              color: #000000A6;
+              font-size: 12px;
+              font-weight: 500;
+              display: block;
+              text-decoration: line-through;
+            }
+
+            h3 {
+              line-height: 24px;
+              font-size: 24px !important;
+
+              span {
+                font-size: 14px;
+                line-height: 20px;
+                font-weight: 500;
+                vertical-align: text-top;
+              }
+            }
+
+            .tertiaryBtn {
+              button {
+                // color: #083950 !important;
+                letter-spacing: -0.1px;
+              }
+
+            }
+          }
+        }
+
+      }
+    }
+ 
+    .proposalPreview {
+      .policyDetails {
+        background: $lightMarigold20;
+        // border: 1px solid rgba($black, 0.2);
+        border-radius: 24px;
+        box-shadow: none;
+        padding: 8px 4px 4px;
+        .tertiaryBtn {
+          button {
+            min-width: auto !important;
+            color: #9B6817;
+          }
+        }
+      }
+ 
+      .previewBoxTitle {
+        font-size: 14px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+ 
+      .previewBoxEdit {
+        background: transparent;
+        color: $darkgold;
+        font-size: 14px;
+        font-weight: 600;
+        border-radius: 40px;
+      }
+ 
+      .previewBox {
+        border: 1px solid rgba($black, 0.2);
+        border-radius: 24px;
+        box-shadow: none;
+        padding: 12px;
+
+        &.error_fill_details {
+          border: 1px solid #F50031;
+
+          .add_details_tagline {
+            color: #F50031;
+          }
+        }
+      }
+    }
+ 
+    .previewDetailBox {
+      .premium {
+        span {
+          color: #249F21 !important;
+        }
+      }
+    }
+  }
+ 
+  .proposalLeftSidebar .premium {
+    color: $green;
+    font-size: 1.25rem;
+  }
+ 
+  .proposalFooter {
+    .backStep {
+      &:hover {
+        color: $primary;
+      }
+    }
+
+    &.previewDetailsFooter {
+      .footerInner {
+        align-items: center;
+
+        .paymentInfo {
+          .prevPrice {
+            color: #000000A6;
+            font-size: 12px;
+            font-weight: 500;
+            display: block;
+            text-decoration: line-through;
+          }
+
+          h3 {
+            line-height: 24px;
+            font-size: 24px !important;
+
+            span {
+              font-size: 14px;
+              line-height: 20px;
+              font-weight: 500;
+              vertical-align: text-top;
+            }
+          }
+          .tertiaryBtn {
+            button {
+              color: #083950 !important;
+              letter-spacing: -0.1px;
+            }
+
+          }
+        }
+      }
+
+      .ctaBtn {
+        max-width: fit-content;
+      }
+    }
+  }
+ 
+  .MuiDialogActions-root {
+    button {
+      color: #df9f39 !important;
+    }
+  }
+ 
+  .MuiDayPicker-weekContainer .Mui-selected,
+  .PrivatePickersYear-yearButton.Mui-selected {
+    background-color: #df9f39 !important;
+  }
+}
+ 
+.muthoot-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #df3127;
+    }
+  }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #df3127 !important;
+      color: $white;
+      border-radius: 100px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #df3127 !important;
+      outline: 1px solid;
+      color: #df3127 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 100px;
+ 
+      &:hover {
+        background: #df3127 !important;
+        color: #fff !important;
+ 
+        svg {
+          fill: #fff !important;
+        }
+      }
+ 
+      svg {
+        fill: #df3127 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .tertiaryBtn {
+    button {
+      color: #df3127;
+      font-weight: 500;
+ 
+      &:hover {
+        color: #df3127 !important;
+        background: rgba(#df3127, 0.1) !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #df3127;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #df3127;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: $lightgrey;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: rgba(#df3127, 0.03);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalWrapper_m {
+    background: #f1f1f1;
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #df3127;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.pp-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #2e368f;
+    }
+  }
+ 
+  // .ctaBtn {
+ 
+  //   .greenSmBtn,
+  //   .mediumPrimaryBtn,
+  //   .regularPrimaryBtn {
+  //     background: #2e368f;
+  //     text-transform: capitalize;
+  //     padding: 8px 24px;
+  //     box-shadow: none;
+  //     border-radius: 8px;
+  //   }
+ 
+  //   .mediumSecondaryBtn {
+  //     border: 1px solid #2e368f;
+  //     background: rgba(#fff, 0.1);
+  //     border-radius: 8px;
+  //     color: #2e368f;
+  //   }
+  // }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #2e368f !important;
+      color: $white;
+      border-radius: 6px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #df3127 !important;
+      outline: 1px solid;
+      color: #df3127 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+ 
+      &:hover {
+        background: #df3127 !important;
+        color: #fff !important;
+ 
+        svg {
+          fill: #fff !important;
+        }
+      }
+ 
+      svg {
+        fill: #df3127 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #2e368f;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #2e368f;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: $lightgrey;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: rgba(#2e368f, 0.03);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalWrapper_m {
+    background: #f1f1f1;
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #2e368f;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.motilal-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #fcaf17;
+    }
+  }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #fcaf17 !important;
+      color: $white;
+      border-radius: 8px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #fcaf17 !important;
+      outline: 1px solid;
+      color: #fcaf17 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+ 
+      &:hover {
+        background: #fcaf17 !important;
+        color: #fff !important;
+ 
+        svg {
+          fill: #fff !important;
+        }
+      }
+ 
+      svg {
+        fill: #fcaf17 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .tertiaryBtn {
+    button {
+      color: #fcaf17;
+      font-weight: 500;
+ 
+      &:hover {
+        color: #fcaf17 !important;
+        background: rgba(#fcaf17, 0.1) !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #fcaf17;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #fcaf17;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: $lightgrey;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: rgba(#fcaf17, 0.03);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalWrapper_m {
+    background: #fff;
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #fcaf17;
+        box-shadow: none;
+      }
+    }
+ 
+    // .proposalCheckBoxWrapper {
+    //   background: #203864;
+    // }
+  }
+}
+ 
+.ahalia-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #ff5100;
+    }
+  }
+ 
+  // .ctaBtn {
+ 
+  //   .greenSmBtn,
+  //   .mediumPrimaryBtn,
+  //   .regularPrimaryBtn {
+  //     background: #ff5100;
+  //     text-transform: capitalize;
+  //     padding: 10px 24px;
+  //     box-shadow: none;
+  //     border-radius: 100px;
+  //   }
+  // }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #ff5100 !important;
+      color: $white;
+      border-radius: 100px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #001689 !important;
+      outline: 1px solid;
+      color: #001689 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 100px;
+ 
+      &:hover {
+        background: #001689 !important;
+        color: #fff !important;
+ 
+        svg {
+          fill: #fff !important;
+        }
+      }
+ 
+      svg {
+        fill: #001689 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #001689;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #001689;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #001689;
+      }
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalLeftSidebar .premium {
+    color: #e57327;
+  }
+ 
+  .proposalWrapper_m {
+    background: rgba(#001689, 0.04);
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #ff5100;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.unison-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #24488c;
+    }
+  }
+ 
+  // .ctaBtn {
+ 
+  //   .greenSmBtn,
+  //   .mediumPrimaryBtn,
+  //   .regularPrimaryBtn {
+  //     background: #24488c;
+  //     text-transform: capitalize;
+  //     padding: 10px 24px;
+  //     box-shadow: none;
+  //     border-radius: 100px;
+  //   }
+  // }
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn,
+  .secondaryBtn {
+    button {
+      border-radius: 100px;
+    }
+  }
+ 
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #24488c;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #f7a61d;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #24488c;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: lighten(#24488c, 76%);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalLeftSidebar .premium {
+    color: #f7a61d;
+  }
+ 
+  .proposalWrapper_m {
+    background: rgba(#24488c, 0.04);
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #24488c;
+        box-shadow: none;
+      }
+    }
+  }
+}
+ 
+.besecured-insure {
+  .commonLoader {
+    circle:nth-child(2) {
+      stroke: #213469;
+    }
+  }
+ 
+  // .ctaBtn {
+ 
+  //   .greenSmBtn,
+  //   .mediumPrimaryBtn,
+  //   .regularPrimaryBtn {
+  //     background: #ee4623;
+  //     text-transform: capitalize;
+  //     padding: 10px 24px;
+  //     box-shadow: none;
+  //   }
+  // }
+ 
+  .ctaBtn .regularPrimaryBtn,
+  .primaryBtn {
+    button {
+      background: #ee4623 !important;
+      color: $white;
+      border-radius: 8px;
+      font-weight: 400;
+      border: none;
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .secondaryBtn {
+    button {
+      outline-color: #213469 !important;
+      outline: 1px solid;
+      color: #213469 !important;
+      font-weight: 500;
+      border: none;
+      border-radius: 8px;
+ 
+      &:hover {
+        background: #213469 !important;
+        color: #fff !important;
+ 
+        svg {
+          fill: #fff !important;
+        }
+      }
+ 
+      svg {
+        fill: #001689 !important;
+      }
+ 
+      &.MuiButton-sizeSmall {
+        @include fontSize(12px);
+      }
+ 
+      &.MuiButton-sizeMedium {
+        @include fontSize(14px);
+      }
+    }
+  }
+ 
+  .switch {
+    button {
+      &.Mui-selected {
+        background: #213469;
+      }
+    }
+  }
+ 
+  .inputField {
+    .MuiInputLabel-shrink {
+      color: #213469;
+    }
+ 
+    .Mui-focused {
+      .MuiOutlinedInput-notchedOutline {
+        border-color: #213469;
+      }
+    }
+ 
+    .Mui-disabled {
+      background: lighten(#213469, 60%);
+    }
+  }
+ 
+  .proposalWrapper {
+    .proposalContentSection {
+      .question {
+        color: $black;
+      }
+    }
+  }
+ 
+  .proposalLeftSidebar .premium {
+    color: #ee4623;
+  }
+ 
+  .proposalWrapper_m {
+    background: rgba(#213469, 0.04);
+ 
+    .mProposalNavbar {
+      background: $white;
+ 
+      .backStep {
+        color: $black;
+      }
+    }
+ 
+    .mProposalFooter {
+      background: $white;
+ 
+      .greenSmBtn {
+        background: #ee4623;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.groww-insure {
+  .evInputField {
+
+
+    .Mui-error {
+      color: rgba(0, 0, 0, 0.6) !important;
+
+      .MuiOutlinedInput-notchedOutline {
+        border-color: rgba(0, 0, 0, 0.23) !important;
+      }
+    }
+
+    // .MuiInputLabel-root.MuiInputLabel-shrink {
+    //   color: #1f2add !important;
+    // }
+  }
+}

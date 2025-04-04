@@ -1,0 +1,52 @@
+@import "../../../../SCSS/CommonSCSS/mixins.scss";
+
+.mpolicyConfirmWrapper {
+  min-height: 100vh;
+  .topbar {
+    padding: 12px;
+    position: fixed;
+    text-align: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    background: #fff;
+    z-index: 999;
+    width: 100%;
+  }
+  .innerWrapper {
+    padding-top: 100px !important;
+    text-align: center;
+    padding: 12px;
+
+    .imgsec {
+      img {
+        max-width: 220px;
+      }
+    }
+    h3 {
+      @include fontSize(24px);
+    }
+    p {
+      @include fontSize(16px);
+      span {
+        font-weight: 700;
+      }
+    }
+    .dwnld_p {
+      @include fontSize(14px);
+      text-align: center;
+      a {
+        color: #e6253c;
+        position: relative;
+        padding-left: 22px;
+        text-decoration: none;
+        &:before {
+          @include position(absolute, $left: 0px, $top: 2px);
+          content: "";
+          background: url("./../../../../../public/images/download_icon.svg")
+            no-repeat 0px /18px;
+          height: 14px;
+          width: 21px;
+        }
+      }
+    }
+  }
+}

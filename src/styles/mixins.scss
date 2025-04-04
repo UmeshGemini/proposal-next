@@ -1,0 +1,205 @@
+// Color Variables
+$black: #000000;
+$white: #ffffff;
+$grey: #808080;
+$red: #d9132e;
+$theme-blue: #203864;
+$theme-green: #00785a;
+$theme-lightgreen: #00b587;
+// $theme-green: #47b74f;
+$theme-yellow: #ffdc6d;
+$lightbg: #fbfbfb;
+$primary: #DF9F39;
+$lightprimary: #9999FF;
+$darkgold: #966D2E;
+$warmgold: #2F2311;
+$darkgrey: #141414;
+$lightgrey: #595959;
+$lightbg: #f5f5f5;
+$lightMarigold40: #FFD947;
+$lightMarigold30: #FFE3AE;
+$lightMarigold20: #FEF7Ef;
+$lightSky: #0C5273;
+$white: #ffffff;
+$black: #000000;
+$green: #249F21;
+$secondary: #ea4559;
+
+// Class Variables
+$quote: ".quote";
+$proposal: ".proposal";
+$payment: ".payment";
+$documents: ".documents";
+$policyConfirm: ".policyConfirm";
+$pageNotFound: ".pageNotFound";
+
+/*--------------Mixins------------------*/
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin border-radius($radius: none) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin appearance() {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin fontSize($size) {
+  //font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin abs-position($top, $right, $bottom, $left) {
+  // @include abs-position(10px, 10px, auto, auto);
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// Margins
+@for $i from 0 through 40 {
+  .ml-#{$i} {
+    margin-left: 4px * $i !important;
+  }
+
+  .mr-#{$i} {
+    margin-right: 4px * $i !important;
+  }
+
+  .mt-#{$i} {
+    margin-top: 4px * $i !important;
+  }
+
+  .mb-#{$i} {
+    margin-bottom: 4px * $i !important;
+  }
+
+  .mx-#{$i} {
+    margin-left: 4px * $i !important;
+    margin-right: 4px * $i !important;
+  }
+
+  .my-#{$i} {
+    margin-top: 4px * $i !important;
+    margin-bottom: 4px * $i !important;
+  }
+}
+
+// Paddings
+@for $i from 0 through 40 {
+  .pl-#{$i} {
+    padding-left: 4px * $i !important;
+  }
+
+  .pr-#{$i} {
+    padding-right: 4px * $i !important;
+  }
+
+  .pt-#{$i} {
+    padding-top: 4px * $i !important;
+  }
+
+  .pb-#{$i} {
+    padding-bottom: 4px * $i !important;
+  }
+
+  .px-#{$i} {
+    padding-left: 4px * $i !important;
+    padding-right: 4px * $i !important;
+  }
+
+  .py-#{$i} {
+    padding-top: 4px * $i !important;
+    padding-bottom: 4px * $i !important;
+  }
+}
+
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-Medium.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-Medium.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-Bold.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-Bold.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-LightItalic.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-LightItalic.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-MediumItalic.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-MediumItalic.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-Light.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-Light.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JioType';
+  src: url('../../../public/jiofonts/JioType-Black.woff2') format('woff2'),
+    url('../../../public/jiofonts/JioType-Black.woff') format('woff'),
+    url('../../../public/jiofonts/JioType-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

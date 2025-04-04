@@ -1,0 +1,19 @@
+@import "../../SCSS/CommonSCSS/mixins.scss";
+
+// Main Navbar
+.proposalNavbar {
+  background: $white;
+  border-bottom: 1px solid rgba($black, 0.1);
+  @include position(sticky, $top: 0px, $left: 0px);
+  padding: 12px 0px;
+  min-height: 65px;
+  width: 100%;
+  z-index: 991;
+  display: flex;
+  align-items: center;
+
+  .MuiGrid2-container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}

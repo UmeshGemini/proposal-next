@@ -1,0 +1,769 @@
+@import "./mixins.scss";
+// @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+@import "./../index.scss";
+// @import "../Component/Common/FieldTypes/FieldTypes.scss";
+
+h1 {
+  @include fontSize(36px);
+}
+
+h2 {
+  @include fontSize(32px);
+}
+
+h3 {
+  @include fontSize(28px);
+}
+
+h4 {
+  @include fontSize(24px);
+}
+
+h5 {
+  @include fontSize(20px);
+}
+
+h6 {
+  @include fontSize(16px);
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+.MuiPickersDay-root,
+.MuiPickersYear-yearButton {
+  &.Mui-selected {
+    background-color: $primary !important;
+  }
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 9999;
+}
+
+#{$proposal}Wrapper {
+  background: $white;
+  // padding-top: 50px;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+
+  .MuiGrid2-container {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  // Right Content Section
+  .proposalContentSection {
+    padding-top: 32px;
+    padding-bottom: 100px;
+    min-height: calc(100vh - 60px);
+    text-align: left;
+
+    .sectionTitle {
+      position: sticky;
+      top: 17px;
+      font-weight: 500;
+      z-index: 992;
+      text-align: center;
+      margin-top: -90px;
+      margin-bottom: 40px;
+      min-height: 34px;
+    }
+
+    hr {
+      border-top: 1px solid #ccc;
+      border-bottom: none;
+      border-left: none;
+      border-right: none;
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    h6 {
+      font-weight: 500;
+    }
+
+    // Right Content Section
+    .proposalContentSection {
+      // padding-top: 32px;
+      padding-top: 150px;
+      padding-bottom: 100px;
+      min-height: calc(100vh - 60px);
+      text-align: left;
+
+      .sectionTitle {
+        // @include position(fixed, $top: 20px, $left: 58%);
+        // transform: translateX(-44%);
+        // z-index: 991;
+        position: sticky;
+        top: 14px;
+        font-weight: 500;
+        z-index: 992;
+        text-align: center;
+        margin-top: -83px;
+        margin-bottom: 40px;
+        min-height: 34px;
+      }
+    }
+
+    .weightField {
+      display: flex;
+
+      .weightIcon {
+        background: url("../../../public/images/weightHeight-icons.svg") no-repeat 0px 0px/100px;
+        display: inline-block;
+        margin-right: 8px;
+        height: 50px;
+        min-width: 50px;
+      }
+    }
+
+    .heightField {
+      display: flex;
+
+      .heightIcon {
+        background: url("../../../public/images/weightHeight-icons.svg") no-repeat -50px 0px/100px;
+        display: inline-block;
+        margin-right: 8px;
+        height: 50px;
+        min-width: 50px;
+      }
+
+      .inputField {
+        width: 100%;
+      }
+    }
+
+    .question {
+      color: $primary;
+      font-weight: 500;
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 26px;
+      text-transform: lowercase;
+
+      &::first-letter {
+        text-transform: capitalize;
+      }
+
+      &:before {
+        @include position(absolute, $left: 0px, $top: 0px);
+        background: url("../../../public/images/other-icons.svg") no-repeat 0px 0px/180px;
+        content: "";
+        height: 20px;
+        width: 20px;
+      }
+    }
+
+    .document_p {
+      @include fontSize(16px);
+    }
+
+    .ckyc_p {
+      @include fontSize(14px);
+      line-height: 20px;
+    }
+
+    .fieldbox {
+      position: relative;
+
+      .uploadField {
+        position: relative;
+        // max-width: 82%;
+
+        // @media (max-width:1199px) {
+        //     max-width: 70%;
+        // }
+
+        label,
+        input {
+          font-weight: 400;
+          letter-spacing: 0px;
+          @include fontSize(14px);
+        }
+
+        // label {
+        //     transform: translate(14px, 14px) scale(1);
+        //     top: 2px;
+        // }
+
+        svg {
+          display: none;
+        }
+
+        input {
+          // height: 20px;
+          @include border-radius(4px);
+          background: $white;
+          padding: 12px 80px 12px 12px;
+        }
+
+        .MuiInputBase-root {
+          box-shadow: none;
+          @include border-radius(8px);
+        }
+
+        .MuiAutocomplete-root {
+          .MuiAutocomplete-inputRoot {
+            @include border-radius(8px);
+            padding: 0px 0px 0px 8px;
+            height: 50px;
+          }
+
+          .MuiAutocomplete-clearIndicator {
+            background: #fff;
+            height: 18px;
+            width: 18px;
+            border: 1px solid #ccc;
+
+            svg {
+              display: block;
+              height: 12px;
+              color: $secondary;
+            }
+          }
+        }
+
+        .Mui-focused {
+          .MuiOutlinedInput-notchedOutline {
+            border-color: #6b62dc !important;
+          }
+
+          .MuiSelect-select {
+            &:before {
+              border: solid $primary;
+              border-width: 0px 0px 1.4px 1.4px;
+              transform: rotate(-223deg);
+              top: 24px;
+            }
+          }
+        }
+
+        fieldset {
+          border-color: rgba(0, 0, 0, 0.2);
+          @include border-radius(8px);
+          border-width: 1px;
+          font-weight: 500;
+          box-shadow: none;
+        }
+      }
+
+      .browsebtn {
+        height: 44px;
+        border-left: 1px solid rgba(0, 0, 0, 0.1) !important;
+        @include fontSize(14px);
+        font-weight: 400;
+        @include border-radius(0px 8px 8px 0px);
+        background: rgba(0, 0, 0, 0.1) !important;
+        color: rgba(0, 0, 0, 0.87);
+        box-shadow: none;
+        text-transform: capitalize;
+        position: absolute;
+        right: 0;
+
+        &.uploadbtn {
+          // @extend .browsebtn;
+          border-radius: 8px;
+        }
+      }
+    }
+  }
+
+  #{$proposal}CheckBoxWrapper {
+    padding-right: 12px;
+    margin-left: 0px;
+
+    .MuiButtonBase-root {
+      position: relative;
+      padding: 0px;
+      margin-right: 8px;
+
+      .MuiSvgIcon-root {
+        display: none;
+      }
+
+      &:before {
+        content: "";
+        border: 1px solid;
+        border-color: #000;
+        height: 20px;
+        width: 20px;
+        border-radius: 4px;
+        top: -1px;
+        position: relative;
+      }
+
+      &.Mui-checked {
+        &:before {
+          content: "";
+          border: 1px solid;
+          border-color: $theme-blue;
+          background-color: $theme-blue;
+          border-radius: 4px;
+          height: 20px;
+          width: 20px;
+        }
+
+        &:after {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          content: "";
+          border-bottom: 1px solid;
+          border-left: 1px solid;
+          border-top: none;
+          border-right: none;
+          border-color: $white;
+          transform: rotate(-45deg);
+          height: 4px;
+          width: 9px;
+        }
+      }
+    }
+
+    .MuiFormControlLabel-label {
+      @include fontSize(14px);
+      text-transform: lowercase;
+
+      &:first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  // Detail Preview
+  #{$proposal}Preview {
+    padding-top: 12px;
+
+    .previewBox {
+      @include border-radius(8px);
+      box-shadow: 0px 4px 8px rgba($black, 0.15);
+
+      &Title {
+        font-weight: 600;
+        text-transform: uppercase;
+        @include fontSize(14px);
+
+        sup {
+          text-transform: lowercase;
+        }
+      }
+
+      &Edit {
+        background: $primary;
+        @include border-radius(4px);
+        color: $black;
+        @include fontSize(12px);
+        padding: 2px 6px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+          background: lighten($primary, 10%);
+          color: $white;
+        }
+
+        svg {
+          height: 10px;
+          width: 10px;
+          margin-right: 4px;
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 10px;
+
+        li {
+          flex: 0 0 50%;
+          max-width: 50%;
+          list-style-type: none;
+          padding-right: 8px;
+
+          p {
+            color: rgba($black, 0.6);
+            @include fontSize(13px);
+
+            span {
+              color: $black;
+              font-weight: 500;
+              display: block;
+              word-break: break-all;
+            }
+          }
+        }
+      }
+
+      .bold_p {
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+
+      .member_list {
+        display: flex;
+
+        flex-wrap: wrap;
+
+        margin-left: 0;
+
+        li {
+          max-width: calc(100% / 3);
+
+          text-align: center;
+
+          $infoicons: fatherillness, motherillness, selfillness, spouseillness,
+            sonillness, daughterillness, childSonillness, childDaughterillness;
+
+          $k: 0;
+
+          @each $icons in $infoicons {
+            $bacRightP: $k * 65.5;
+
+            $k: $k + 1;
+
+            .#{$icons} {
+              background: url("../../../public/images/policy-members.svg") no-repeat -#{$bacRightP}px 0px/590px;
+
+              border: 1px solid rgba($black, 0.15);
+
+              @include border-radius(3px);
+
+              display: block;
+
+              height: 65px;
+
+              width: 65px;
+
+              margin: 0 auto 8px;
+            }
+          }
+
+          .member_name {
+            @include fontSize(13px);
+
+            font-weight: 700;
+          }
+
+          .adult {
+            border: 1px solid rgba($black, 0.15);
+
+            @include border-radius(3px);
+
+            display: block;
+
+            height: 65px;
+
+            width: 65px;
+
+            margin: 0 auto 8px;
+            background: url("../../../public/images/adult-icon.svg") no-repeat 0px 0px/100%;
+          }
+
+          .child {
+            border: 1px solid rgba($black, 0.15);
+            @include border-radius(3px);
+
+            display: block;
+
+            height: 65px;
+
+            width: 65px;
+
+            margin: 0 auto 8px;
+            background: url("../../../public/images/child-icon.svg") no-repeat 0px 0px/100%;
+          }
+
+          .diagnose_p {
+            @include fontSize(13px);
+
+            span {
+              font-weight: 700;
+
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Popup
+.modalWrapper {
+  overflow-y: auto;
+  backdrop-filter: blur(4px);
+  background: rgba(#000, 0.2);
+
+  .MuiBackdrop-root {
+    background: transparent;
+  }
+
+  .modalInner {
+    @include box-shadow(0px 4px 16px rgba(#000, 0.2));
+    position: relative;
+    margin: 60px auto;
+    width: 582px;
+    @include border-radius(20px);
+    background: #fff;
+    padding: 30px;
+    // margin: auto;
+
+    &.md-width {
+      width: 624px;
+      max-width: 100%;
+    }
+
+    &.lg-width {
+      width: 650px;
+      max-width: 650px;
+    }
+
+    &.xl-width {
+      width: 882px;
+      max-width: 882px;
+    }
+
+    &.mob {
+      margin: 0 auto;
+      width: 100%;
+      background: #fff;
+      padding: 20px;
+      @include border-radius(0px);
+      height: 100%;
+    }
+
+    .back-button {
+      display: inline-block;
+      position: relative;
+      $size: 22px;
+      height: $size;
+      width: $size;
+      // margin-right: 8px;
+
+      &:before,
+      &:after {
+        background-color: black;
+        @include border-radius(8px);
+        content: "";
+        @include position(absolute, $left: 0px, $top: 7px);
+        $width: 12px;
+        $height: 2.5px;
+        height: $height;
+        width: $width;
+        transform: rotate(-45deg);
+        transition: all 0.5s ease;
+      }
+
+      &:after {
+        transform: rotate(-135deg);
+        top: 14px;
+      }
+
+      &:hover {
+
+        &:before,
+        &:after {
+          // background: $primary-orange;
+          left: -4px;
+        }
+      }
+    }
+
+    .popup-heading {
+      // font-family: "Montserrat";
+      font-weight: 600;
+      @include fontSize(20px);
+      line-height: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .grey_p {
+      font-weight: 400;
+      @include fontSize(15px);
+      line-height: 18px;
+      text-align: center;
+      margin-bottom: 16px;
+      color: #999;
+    }
+
+    .policy_number_box {
+      background: #fff9e6;
+      color: #ffc929;
+      border: 1px solid #ffc929;
+      padding: 10px 16px;
+      border-radius: 30px;
+      @include fontSize(18px);
+      display: inline-block;
+    }
+
+    h6 {
+      font-weight: 600;
+      @include fontSize(16px);
+      line-height: 18px;
+      margin-bottom: 16px;
+      text-align: left;
+
+      span {
+        font-weight: 400;
+        display: block;
+        text-transform: uppercase;
+        @include fontSize(15px);
+        margin-top: 8px;
+      }
+    }
+
+    .Section_li {
+      display: flex;
+      justify-content: center;
+      font-size: 14px;
+
+      .yes,
+      .no {
+        position: relative;
+        padding-right: 24px;
+
+        &:before {
+          @include position(absolute, $right: 0px, $top: 4px);
+          content: "";
+          height: 16px;
+          width: 16px;
+        }
+      }
+
+      .yes {
+        &:before {
+          background: url("../../../public/images/tick-green.svg") no-repeat right center/100%;
+        }
+      }
+
+      .no {
+        &:before {
+          background: url("../../../public/images/cross-red.svg") no-repeat right center/100%;
+        }
+      }
+    }
+
+    .tableView {
+      ul {
+        display: flex;
+
+        &:first-child {
+          background: $theme-blue;
+          color: $white;
+          font-weight: 600;
+        }
+
+        &:last-child {
+          font-weight: 600;
+        }
+
+        li {
+          background: rgba($theme-blue, 0.1);
+          padding: 8px;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  .close-button {
+    background: transparent;
+    color: #000;
+    border-radius: 50px;
+    @include position(absolute, $right: 20px, $top: 20px);
+    $size: 30px;
+    height: $size;
+    width: $size;
+    box-sizing: border-box;
+    line-height: $size;
+    z-index: 99;
+
+    &:before,
+    &:after {
+      $width: 20px;
+      $height: 1.5px;
+      transform: rotate(-45deg);
+      content: "";
+      @include position(absolute, $right: 5px, $top: 14px);
+      height: $height;
+      width: $width;
+      background-color: #000;
+      transition: all 0.2s ease;
+    }
+
+    &:after {
+      transform: rotate(-135deg);
+    }
+
+    &:hover {
+      &:before {
+        background-color: #de4b4b;
+        transform: rotate(0deg);
+      }
+
+      &:after {
+        background-color: #de4b4b;
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  .premium {
+    @include fontSize(18px);
+    color: #ea4559;
+    font-weight: 600;
+    margin-bottom: 8px;
+
+    svg {
+      position: relative;
+      top: 3px;
+      color: #ea4559;
+    }
+
+    span {
+      color: #999;
+      text-decoration: line-through;
+      margin-right: 15px;
+      margin-left: 15px;
+
+      svg {
+        color: #999;
+      }
+    }
+  }
+
+  .Idv_value {
+    @include fontSize(18px);
+    font-weight: 600;
+
+    svg {
+      position: relative;
+      top: 3px;
+      height: 20px;
+    }
+
+    span {
+      color: #999;
+      text-decoration: line-through;
+      margin-right: 15px;
+      margin-left: 15px;
+
+      svg {
+        color: #999;
+      }
+    }
+  }
+}

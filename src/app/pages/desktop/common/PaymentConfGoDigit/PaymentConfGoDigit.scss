@@ -1,0 +1,63 @@
+@import "../../../../SCSS/CommonSCSS/mixins.scss";
+
+#{$policyConfirm}Wrapper {
+  .MuiGrid2-container {
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  background: $lightbg;
+  padding-top: 80px;
+  min-height: 100vh;
+
+  .pc-innerwrapper {
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px 0px rgba(30, 113, 236, 0.1);
+    padding: 40px 20px;
+    margin-top: 80px;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -60%);
+  }
+
+  h3 {
+    @include fontSize(28px);
+    text-align: center;
+  }
+
+  p {
+    @include fontSize(20px);
+    text-align: center;
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .dwnld_p {
+    @include fontSize(16px);
+    text-align: center;
+    a {
+      color: #e6253c;
+      position: relative;
+      padding-left: 20px;
+      text-decoration: none;
+      width: 112px;
+      transition: font-weight ease 0.3s;
+      display: inline-block;
+      &:hover {
+        font-weight: 700;
+        transition: font-weight ease 0.3s;
+      }
+      &:before {
+        @include position(absolute, $left: 0px, $top: 4px);
+        content: "";
+        background: url("./../../../../../public/images/download_icon.svg")
+          no-repeat 0px /21px;
+        height: 14px;
+        width: 21px;
+      }
+    }
+  }
+}

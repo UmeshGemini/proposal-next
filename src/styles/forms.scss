@@ -1,0 +1,701 @@
+@import "./mixins.scss";
+@import "./../../../Component/FieldTypes/FieldTypes.scss";
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap");
+
+.productForm {
+  .backnavigate {
+    @include position(fixed, $top: 0px, $left: 0px);
+    z-index: 91;
+    // border-bottom: 1px solid rgba($black, 0.1);
+    background: $white;
+    padding: 16px;
+    width: 100%;
+
+    .MuiGrid2-container {
+      max-width: 2000px;
+    }
+
+    .backStep {
+      margin-right: 8px;
+      color: $black;
+      cursor: pointer;
+      @include fontSize(18px);
+      font-weight: 400;
+      text-decoration: none;
+
+      &:hover {
+        color: $theme-lightgreen;
+        svg {
+          left: -4px;
+          color: $theme-lightgreen;
+        }
+      }
+
+      svg {
+        position: relative;
+        transition: all 0.5s ease;
+        left: 0px;
+        top: 6px;
+        height: 26px;
+        width: 30px;
+      }
+    }
+  }
+
+  .formWrapper {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 78px 24px 24px;
+    min-height: 100vh;
+    // overflow: hidden;
+    z-index: 9;
+    &.changeStyle {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 180px;
+      > div {
+        min-height: 500px;
+        width: 100%;
+      }
+    }
+
+    &.carbg {
+      position: relative;
+
+      &:before {
+        content: "";
+        @include position(absolute, $left: 0px, $bottom: 0px);
+        background: url("./../../public/images/carForm_Background.svg")
+          no-repeat bottom center/100%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    &.twbg {
+      position: relative;
+
+      &:before {
+        content: "";
+        @include position(absolute, $left: 0px, $bottom: 25px);
+        background: url("./../../public/images/bikeformbg.svg") no-repeat bottom
+          center/100%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    &.healthbg {
+      position: relative;
+
+      &:before {
+        content: "";
+        @include position(absolute, $left: 0px, $bottom: 0px);
+        background: url("./../../public/images/healthformbg.svg") no-repeat
+          bottom center/100%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    &.termbg {
+      position: relative;
+
+      &:before {
+        content: "";
+        @include position(absolute, $left: 0px, $bottom: 0px);
+        background: url("./../../public/images/termformbg.svg") no-repeat bottom
+          center/100%;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    %btn {
+      background: $theme-lightgreen;
+      color: $white;
+      @include border-radius(12px);
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      text-transform: capitalize;
+      box-shadow: none;
+
+      &:hover {
+        background: lighten($theme-lightgreen, 5%);
+        @include box-shadow(0px 4px 12px rgba($theme-green, 0.3));
+      }
+
+      svg {
+        animation: animName 2s linear infinite;
+        margin: 0px 20px;
+      }
+
+      @keyframes animName {
+        0% {
+          transform: rotate(0deg);
+        }
+
+        100% {
+          transform: rotate(-360deg);
+        }
+      }
+    }
+
+    .greenXlBtn {
+      @extend %btn;
+      @include fontSize(16px);
+      padding: 12px 30px;
+      line-height: 24px;
+    }
+
+    .greenLgBtn {
+      @extend %btn;
+      @include fontSize(14px);
+      padding: 10px 20px;
+      line-height: 21px;
+    }
+
+    .greenMdBtn {
+      @extend %btn;
+      @include fontSize(14px);
+      padding: 6px 16px;
+    }
+
+    .greenSmBtn {
+      @extend %btn;
+      @include fontSize(14px);
+      padding: 3px 14px;
+    }
+
+    .greenXsBtn {
+      @extend %btn;
+      @include fontSize(12px);
+      padding: 2px 14px;
+    }
+
+    .toinsure {
+      font-family: "Poppins", sans-serif;
+      @include fontSize(14px);
+      font-weight: 500;
+      line-height: 14px;
+      margin: 0px;
+
+      span {
+        @include fontSize(16px);
+        color: $theme-lightgreen;
+      }
+    }
+
+    .pageHeading {
+      font-family: "Poppins", sans-serif;
+      @include fontSize(32px);
+      font-weight: 300;
+      line-height: 32px;
+      margin: 0px 0px 10px;
+
+      span {
+        font-weight: 600;
+      }
+
+      .best {
+        color: $theme-lightgreen;
+        padding-left: 12px;
+        padding-right: 14px;
+        position: relative;
+
+        &:before {
+          @include position(absolute, $top: -2px, $left: -5px);
+          content: "";
+          background: url("./../../public/images/bestTag_bg.png") no-repeat 0 0 /100%;
+          width: 102px;
+          height: 52px;
+        }
+      }
+    }
+
+    .heading_desc {
+      font-family: "Poppins", sans-serif;
+      @include fontSize(16px);
+      font-weight: 400;
+      line-height: 24px;
+      margin-bottom: 24px;
+      color: rgba($black, 0.5);
+    }
+
+    .newvehicle {
+      font-family: "Poppins", sans-serif;
+      @include fontSize(16px);
+      font-weight: 400;
+      line-height: 24px;
+      color: $black;
+      display: inline-block;
+
+      span {
+        color: $theme-lightgreen;
+        font-weight: 600;
+        cursor: pointer;
+        padding-left: 6px;
+      }
+    }
+
+    .detailBox {
+      background: $white;
+      border: 1px dashed $theme-blue;
+      border-radius: 0px 0px 12px 12px;
+      border-top: 0;
+      box-shadow: 0px 10px 12px 0px rgba(30, 113, 236, 0.1);
+      padding: 0px 20px 20px;
+
+      .detailBoxheading {
+        font-family: "Poppins", sans-serif;
+        @include fontSize(20px);
+        font-weight: 600;
+        line-height: 30px;
+        text-transform: capitalize;
+        text-align: center;
+        margin: 0;
+      }
+
+      p {
+        @include fontSize(16px);
+        font-weight: 400;
+        line-height: 24px;
+        color: rgba($black, 0.5);
+        display: block;
+      }
+
+      .changeVehicle {
+        background: rgba($theme-yellow, 0.4);
+        border: 1px solid transparent;
+        @include border-radius(20px);
+        color: darken($theme-yellow, 40%);
+        cursor: pointer;
+        display: table;
+        @include fontSize(14px);
+        text-decoration: none;
+        transition: all 0.3s;
+        padding: 4px 12px;
+        margin: 20px auto 0px;
+
+        &:hover {
+          border: 1px dashed darken($theme-yellow, 40%);
+        }
+      }
+
+      hr {
+        margin: 20px 0;
+        border-top: 1px solid rgba($theme-blue, 0.1);
+        border-bottom: none;
+        border-left: none;
+        border-right: none;
+      }
+
+      .vehicledetails {
+        font-family: "Poppins", sans-serif;
+        margin-bottom: 8px;
+        @include fontSize(14px);
+        font-weight: 600;
+        color: $black;
+        margin: 8px 0px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        align-self: stretch;
+        div {
+          line-height: 16px;
+        }
+        span {
+          color: rgba($black, 0.5);
+          font-weight: 400;
+          display: inline-block;
+          width: 122px;
+          min-width: 122px;
+          margin-right: 8px;
+        }
+        .regNumber {
+          background: url("../../public/images/ind.svg") no-repeat 0px -1px/18px;
+          border: 1px solid rgba($theme-blue, 0.4);
+          @include border-radius(4px);
+          padding: 4px 8px 4px 24px;
+          text-transform: uppercase;
+          font-weight: 700;
+          overflow: hidden;
+        }
+      }
+    }
+
+    .manufactour_list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 32px 0;
+
+      &.left_align {
+        justify-content: left;
+        padding-left: 0;
+      }
+
+      li {
+        width: 120px;
+        max-height: 91px;
+        padding: 60px 12px 16px;
+        border-radius: 6px;
+        background: $white;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        font-family: "Poppins", sans-serif;
+        @include fontSize(14px);
+        font-weight: 400;
+        margin: 10px;
+        line-height: 15px;
+        cursor: pointer;
+        color: $black;
+        border: 0;
+        text-align: center;
+        position: relative;
+
+        &.active {
+          background: $theme-blue !important;
+          color: $white;
+          box-shadow: 0px 4px 12px 0px rgba($theme-blue, 0.4);
+        }
+
+        &:first-child {
+          margin-left: 0px;
+        }
+
+        &:hover {
+          background: rgba($theme-blue, 0.1);
+        }
+      }
+
+      $othericons: hyundai, maruti, tata, volkswagen, mahindra, kia, honda,
+        skoda, toyota, mercedes, audi, bmw;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 60;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/manufacture_imgs.svg")
+            no-repeat -#{$bacRightP}px
+            0px/720px;
+          height: 50px;
+          width: 60px;
+          top: 10px;
+          left: calc(50% - 30px);
+        }
+      }
+
+      $othericons: bajaj, tvs, hero, honda, royalenfield, ktm;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 50;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/bikemanufacture_imgs.svg")
+            no-repeat -#{$bacRightP}px
+            0px/300px;
+          height: 50px;
+          width: 50px;
+          top: 10px;
+          left: calc(50% - 25px);
+        }
+      }
+
+      // health adults list
+      $othericons: oneadult, twoadults;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 33;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/health_adults_icons.svg")
+            no-repeat -#{$bacRightP}px
+            0px/66px;
+          height: 33px;
+          width: 33px;
+          top: 16px;
+          left: calc(50% - 16px);
+
+          &.active {
+            background: url("./../../public/images/health_adults_icons_blue.svg")
+              no-repeat -#{$bacRightP}px
+              0px/66px;
+          }
+        }
+      }
+    }
+
+    .manufactour_list_car {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 32px 0;
+
+      &.left_align {
+        justify-content: left;
+        padding-left: 0;
+      }
+
+      li {
+        width: 120px;
+        max-height: 91px;
+        padding: 65px 12px 12px;
+        border-radius: 6px;
+        background: $white;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        font-family: "Poppins", sans-serif;
+        @include fontSize(14px);
+        font-weight: 400;
+        margin: 10px;
+        line-height: 15px;
+        cursor: pointer;
+        color: $black;
+        border: 0;
+        text-align: center;
+        position: relative;
+
+        &.active {
+          background: $theme-blue !important;
+          color: $white;
+          box-shadow: 0px 4px 12px 0px rgba($theme-blue, 0.4);
+        }
+
+        &:first-child {
+          margin-left: 0px;
+        }
+
+        &:hover {
+          background: rgba($theme-blue, 0.1);
+        }
+      }
+
+      $othericons: hyundai, maruti, tata, volkswagen, mahindra, kia, honda,
+        skoda, toyota, mercedes, audi, bmw;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 60;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/manufacture_imgs.svg")
+            no-repeat -#{$bacRightP}px
+            0px/720px;
+          height: 50px;
+          width: 60px;
+          top: 10px;
+          left: calc(50% - 30px);
+        }
+      }
+
+      // health adults list
+      $othericons: oneadult, twoadults;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 33;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/health_adults_icons.svg")
+            no-repeat -#{$bacRightP}px
+            0px/66px;
+          height: 33px;
+          width: 33px;
+          top: 10px;
+          left: calc(50% - 16px);
+
+          &.active {
+            background: url("./../../public/images/health_adults_icons_blue.svg")
+              no-repeat -#{$bacRightP}px
+              0px/66px;
+          }
+        }
+      }
+    }
+
+    .varient_list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 32px 0;
+
+      &.left_align {
+        justify-content: left;
+        padding-left: 0;
+      }
+
+      li {
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: $white;
+        // box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        font-family: "Poppins", sans-serif;
+        @include fontSize(14px);
+        font-weight: 400;
+        margin: 10px;
+        line-height: 14px;
+        cursor: pointer;
+        color: $black;
+        border: 1px solid rgba($theme-blue, 0.2);
+        text-align: center;
+
+        &:first-child {
+          margin-left: 0px;
+        }
+
+        &:last-child {
+          margin-right: 0px;
+        }
+
+        &.active {
+          background: $theme-blue !important;
+          color: $white;
+          box-shadow: 0px 4px 12px 0px rgba(32, 56, 100, 0.4);
+        }
+
+        &:hover {
+          background: rgba($theme-blue, 0.1);
+        }
+      }
+    }
+
+    .fuel_list {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 32px 0;
+
+      li {
+        width: 120px;
+        max-height: 91px;
+        padding: 65px 12px 12px;
+        border-radius: 6px;
+        background: $white;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        font-family: "Poppins", sans-serif;
+        @include fontSize(14px);
+        font-weight: 400;
+        margin: 10px;
+        line-height: 15px;
+        cursor: pointer;
+        color: $black;
+        border: 0;
+        text-align: center;
+        position: relative;
+
+        &.active {
+          background: $theme-blue;
+          color: $white;
+          box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.15);
+        }
+
+        &:hover {
+          background: rgba($theme-blue, 0.2);
+        }
+      }
+
+      $othericons: petrol, diesel, lpg, cng, electric;
+      $k: 0;
+
+      @each $icons in $othericons {
+        $bacRightP: $k * 52;
+        $k: $k + 1;
+
+        .#{$icons} {
+          position: absolute;
+          background: url("./../../public/images/fuel_imgs.svg")
+            no-repeat -#{$bacRightP}px
+            0px/260px;
+          height: 50px;
+          width: 50px;
+          top: 10px;
+          left: calc(50% - 25px);
+        }
+      }
+    }
+
+    .claimed {
+      font-family: "Poppins", sans-serif;
+      @include fontSize(16px);
+      font-weight: 500;
+      line-height: 16px;
+      margin: 10px 0px;
+      color: $black;
+      margin: 0;
+
+      span {
+        display: block;
+        @include fontSize(14px);
+        font-weight: 400;
+        line-height: 16px;
+        color: rgba($black, 0.5);
+        padding-top: 8px;
+      }
+    }
+
+    .rangeSlider {
+      color: $theme-lightgreen;
+      height: 6px;
+
+      .MuiSlider-rail {
+        opacity: 0.2;
+      }
+
+      .Mui-focusVisible {
+        @include box-shadow(0px 0px 0px 8px rgba($theme-lightgreen, 0.2));
+      }
+
+      .MuiSlider-thumb {
+        height: 24px;
+        width: 24px;
+
+        &:hover {
+          @include box-shadow(0px 0px 0px 8px rgba($theme-lightgreen, 0.2));
+        }
+      }
+    }
+
+    .disabledCheckbox {
+      .MuiTypography-root {
+        margin-left: 0px;
+
+        a {
+          color: $theme-lightgreen;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+
+      .Mui-disabled {
+        color: $black;
+      }
+    }
+  }
+}

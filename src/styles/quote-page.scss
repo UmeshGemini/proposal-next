@@ -1,0 +1,1000 @@
+@import "./mixins.scss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+.quoteWrapper {
+  padding-top: 60px;
+
+  .MuiGrid2-container {
+    max-width: 1200px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-family: "poppins";
+  }
+
+  %btn {
+    background: $theme-lightgreen;
+    color: $white;
+    @include border-radius(12px);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    text-transform: capitalize;
+
+    &:hover {
+      background: lighten($theme-lightgreen, 5%);
+      @include box-shadow(0px 4px 12px rgba($theme-green, 0.3));
+    }
+  }
+
+  .greenXlBtn {
+    @extend %btn;
+    @include fontSize(16px);
+    padding: 12px 30px;
+    line-height: 24px;
+  }
+
+  .greenLgBtn {
+    @extend %btn;
+    @include fontSize(14px);
+    padding: 10px 20px;
+    line-height: 21px;
+  }
+
+  .greenMdBtn {
+    @extend %btn;
+    @include fontSize(14px);
+    padding: 6px 16px;
+  }
+
+  .greenSmBtn {
+    @extend %btn;
+    @include fontSize(14px);
+    padding: 3px 14px;
+  }
+
+  .greenXsBtn {
+    @extend %btn;
+    @include fontSize(12px);
+    padding: 2px 14px;
+  }
+
+  .detailBox {
+    padding-top: 16px;
+    padding-bottom: 20px;
+
+    a {
+      cursor: pointer;
+    }
+
+    .modifyDetails {
+      @include fontSize(14px);
+      color: #00785a;
+      font-family: "poppins";
+      margin-bottom: 4px;
+      text-decoration: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.8;
+      }
+      svg {
+        margin-left: 4px;
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    h6 {
+      @include fontSize(16px);
+      font-weight: 600;
+      margin: 0;
+
+      span {
+        font-weight: 400;
+      }
+    }
+
+    p {
+      @include fontSize(14px);
+      margin-top: 2px;
+    }
+
+    //   $producticons: carIcon, healthIcon, bikeIcon, travelIcon, commercialIcon;
+    //   $k: 0;
+    //   @each $icons in $producticons {
+    //     $bacRightP: $k * 60;
+    //     $k: $k + 1;
+
+    //     .#{$icons} {
+    //       background: url("../../../../../public/images/products-insurance.svg")
+    //         no-repeat -#{$bacRightP}px
+    //         0px/300px;
+    //       display: block;
+    //       margin-right: 12px;
+    //       height: 60px;
+    //       min-width: 60px;
+    //       width: 60px;
+    //     }
+    //   }
+  }
+
+  .sumInsured {
+    position: relative;
+    &:before {
+      content: "₹";
+      @include position(absolute, $left: -2px, $bottom: 12px);
+      @include fontSize(16px);
+      font-weight: 500;
+      height: 23px;
+      width: 10px;
+      color: $black;
+      z-index: 2;
+    }
+    p {
+      color: $theme-green;
+      @include fontSize(12px);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding-right: 8px;
+      gap: 4px;
+      top: 10px;
+      z-index: 4;
+
+      svg {
+        color: $black;
+        height: 14px;
+        width: 14px;
+        opacity: 0.6;
+      }
+    }
+
+    .inputField {
+      .MuiSelect-select {
+        @include fontSize(16px);
+        font-weight: 500;
+        padding-right: 16px;
+      }
+
+      fieldset {
+        border: none;
+      }
+    }
+  }
+
+  .tq_filters {
+    max-width: 260px;
+    display: flex;
+    justify-content: end;
+    margin-left: auto;
+
+    .inputField {
+      position: relative;
+      &.smWidth {
+        width: 120px;
+      }
+
+      fieldset {
+        border: none;
+      }
+
+      .MuiInputLabel-shrink {
+        transform: translate(14px, -9px) scale(0.75);
+      }
+      &.inrIcon {
+        &:before {
+          content: "₹";
+          @include position(absolute, $left: -2px, $top: 9px);
+          font-weight: 500;
+          width: 10px;
+          height: 20px;
+          z-index: 2;
+        }
+      }
+
+      &.borderLeft {
+        position: relative;
+
+        &:before {
+          @include position(absolute, $top: -4px, $left: -1px);
+          width: 1px;
+          height: 35px;
+          opacity: 0.2;
+          background: #203864;
+          content: "";
+        }
+      }
+
+      .MuiSelect-select {
+        font-weight: 500;
+        @include fontSize(16px);
+        padding-right: 20px;
+
+        &:before {
+          border-width: 0px 0px 1.8px 1.8px;
+          right: 3px;
+        }
+      }
+
+      .infoMessage {
+        @include position(absolute, $left: auto, $top: -6px, $right: -1px);
+        z-index: 1;
+      }
+    }
+  }
+
+  .tips {
+    background: rgba($theme-yellow, 0.2)
+      url("../../public/images/tips-icon.svg") no-repeat right 8px center/24px;
+    border: 1px dashed $theme-yellow;
+    @include border-radius(12px);
+    cursor: default;
+    display: inline-block;
+    @include fontSize(12px);
+    padding: 10px 40px 12px 12px;
+    position: relative;
+    height: 40px;
+
+    &:hover {
+      .tipsInfo {
+        display: inherit;
+      }
+    }
+
+    .tipsInfo {
+      background: $white url("../../public/images/tips-bg.png") no-repeat right
+        8px center/104px;
+      @include box-shadow(0px 4px 12px rgba($black, 0.15));
+      @include border-radius(12px);
+      @include position(absolute, $right: 172px, $top: 0px);
+      display: none;
+      overflow: hidden;
+      width: 370px;
+      z-index: 91;
+      animation-name: fadeInDown;
+      animation-fill-mode: both;
+      animation-duration: 0.5s;
+
+      .innerPart {
+        position: relative;
+        padding: 12px 12px 6px;
+
+        &:before {
+          background: rgba($theme-yellow, 0.2);
+          @include border-radius(50% 50%);
+          content: "";
+          @include position(absolute, $left: -30px, $top: 0px);
+          height: 100%;
+          width: 56px;
+        }
+
+        &:after {
+          background: rgba($theme-yellow, 0.2);
+          @include border-radius(50% 50%);
+          content: "";
+          @include position(absolute, $bottom: -30px, $left: 0px);
+          width: 100%;
+          height: 48px;
+        }
+      }
+
+      h4 {
+        font-weight: 400;
+        @include fontSize(16px);
+        text-align: left;
+        margin-bottom: 16px;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      ul {
+        width: 70%;
+
+        li {
+          background: url("../../public/images/eye-tick-icon.svg") no-repeat
+            left center/20px;
+          @include fontSize(12px);
+          padding-left: 32px;
+          margin-bottom: 8px;
+          text-align: left;
+
+          &:last-child {
+            margin-bottom: 0px;
+          }
+
+          span {
+            color: $red;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translatey(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translatey(0);
+      }
+    }
+  }
+
+  .idvBox {
+    text-align: right;
+    position: relative;
+    display: inline-block;
+    margin-left: auto;
+
+    &:before {
+      @include position(absolute, $right: 152px, $top: 24px);
+      content: "₹";
+      @include fontSize(16px);
+      font-weight: 500;
+    }
+
+    label {
+      @include fontSize(12px);
+      color: $theme-green;
+      text-align: right;
+      display: block;
+      margin-bottom: 4px;
+
+      .infoicon {
+        color: lighten($color: #000000, $amount: 30%);
+        @include fontSize(15px);
+        position: relative;
+        top: 3px;
+      }
+    }
+
+    .actionBtns {
+      @include position(absolute, $right: 170px, $top: 24px);
+      width: 105px;
+
+      .applyBtn {
+        background: $theme-green;
+        @include border-radius(20px);
+        color: $white;
+        font-family: "Poppins", sans-serif;
+        @include fontSize(10px);
+        line-height: 15px;
+        font-weight: 500;
+        padding: 2px 10px;
+        text-transform: uppercase;
+        min-width: 10px;
+        height: 20px;
+      }
+
+      .resetBtn {
+        @extend .applyBtn;
+        background: $theme-blue;
+      }
+    }
+
+    .idvinput {
+      border: none;
+      outline: none;
+      @include fontSize(16px);
+      font-weight: 500;
+      font-family: "poppins";
+      color: #000000;
+      width: 150px;
+      border-bottom: 1px solid #000000;
+      margin-bottom: 16px;
+    }
+
+    .error {
+      @include fontSize(10px);
+      color: $red;
+      @include position(absolute, $right: 0px, $bottom: 16px);
+    }
+
+    p {
+      @include fontSize(10px);
+      color: $black;
+      opacity: 0.5;
+      font-weight: 400;
+      font-family: "poppins";
+    }
+  }
+
+  .vehicleDetailsSection {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background: #edf3fc;
+
+    .lightTag {
+      @include fontSize(12px);
+      color: #000000;
+      opacity: 0.5;
+      font-weight: 400;
+      font-family: "poppins";
+    }
+
+    .darkTag {
+      @include fontSize(12px);
+      color: #000000;
+      font-weight: 400;
+      font-family: "poppins";
+
+      span {
+        font-weight: 600;
+        margin-right: 8px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  .quotation-section {
+    background: rgba(30, 113, 236, 0.04);
+    padding: 24px 0px 0px 0px;
+    min-height: calc(100vh - 228px);
+
+    &.term-qs {
+      min-height: calc(100vh - 168px);
+    }
+
+    &.health-qs {
+      min-height: calc(100vh - 146px);
+    }
+
+    .planFound_sec {
+      h6 {
+        @include fontSize(20px);
+        margin-bottom: 8px;
+        font-weight: 400;
+
+        span {
+          font-weight: 600;
+        }
+      }
+
+      p {
+        @include fontSize(14px);
+        color: $black;
+        opacity: 0.6;
+      }
+    }
+
+    .filterSectionBox {
+      display: flex;
+      justify-content: end;
+      align-items: end;
+
+      .inputField {
+        width: 170px;
+
+        &.mdWidth {
+          width: 170px;
+        }
+
+        &.smWidth {
+          width: 120px;
+        }
+
+        .MuiInputBase-root {
+          box-shadow: none;
+        }
+
+        .MuiSelect-select {
+          // background: white;
+          padding-right: 20px;
+        }
+      }
+
+      .discount_box {
+        margin-left: 12px;
+
+        p {
+          @include fontSize(14px);
+          font-weight: 500;
+          margin-bottom: 4px;
+        }
+
+        .discount-apply-Btn {
+          padding: 6px 12px;
+          @include border-radius(20px);
+          @include fontSize(12px);
+          line-height: 18px;
+          background: #203864;
+          text-transform: uppercase;
+          color: $white;
+          font-family: "poppins";
+          height: 30px;
+        }
+      }
+    }
+
+    .quoteLeftSidebar {
+      max-width: 320px;
+      @media (max-width: 1024px) {
+        max-width: 220px !important;
+      }
+
+      .compulsoryBox {
+        box-shadow: 0px 4px 4px 0px rgba(30, 113, 236, 0.1);
+        @include border-radius(12px);
+        padding: 8px 12px;
+        background: $white;
+
+        p {
+          @include fontSize(12px);
+          color: #203864;
+          margin-bottom: 8px;
+
+          .infoicon {
+            @include fontSize(15px);
+            position: relative;
+            top: 3px;
+          }
+        }
+
+        // .MuiFormControlLabel-root{
+
+        // }
+      }
+
+      h4 {
+        margin-bottom: 12px;
+        @include fontSize(16px);
+        font-weight: 500;
+      }
+
+      ul {
+        padding: 0;
+        margin: 0;
+
+        li {
+          list-style-type: none;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+      }
+
+      .accessoryBox {
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 100%
+        );
+        margin-top: 12px;
+        padding: 8px 12px 16px 12px;
+        @include border-radius(0px 0px 12px 12px);
+        box-shadow: 0px 4px 4px 0px rgba(30, 113, 236, 0.1);
+        display: flex;
+        gap: 12px;
+
+        .apply-Btn {
+          padding: 6px 12px;
+          @include border-radius(20px);
+          @include fontSize(12px);
+          background: #203864;
+          text-transform: uppercase;
+          color: $white;
+          font-family: "poppins";
+          height: 30px;
+        }
+      }
+
+      .accordian {
+        @include border-radius(12px);
+        @include box-shadow(0px 4px 4px rgba($theme-blue, 0.1));
+        margin: 20px 0px;
+
+        .MuiAccordionDetails-root {
+          padding-top: 0px;
+          padding-bottom: 8px;
+        }
+
+        .MuiAccordionSummary-root {
+          min-height: 40px;
+        }
+
+        .MuiAccordionSummary-content {
+          margin: 0px;
+          // min-height: 40px;
+        }
+      }
+
+      .portPolicy {
+        border-left: 1px dashed #3fb3da;
+        border-right: 1px dashed #3fb3da;
+        @include border-radius(0px 0px 12px 12px);
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          $white 100%
+        );
+        padding: 0px 12px 16px;
+        position: relative;
+        overflow-y: hidden;
+
+        &:before {
+          content: "";
+          @include position(absolute, $left: 0px, $bottom: 0px);
+          background: #3fb3da;
+          height: 4px;
+          width: 100%;
+        }
+
+        h5 {
+          color: #3fb3da;
+          @include fontSize(16px);
+          font-weight: 500;
+        }
+
+        p {
+          @include fontSize(10px);
+          margin-top: 12px;
+          opacity: 0.5;
+        }
+
+        .MuiSwitch-root {
+          padding-right: 0px;
+          width: 50px;
+
+          .Mui-checked {
+            color: $theme-blue;
+          }
+
+          .MuiSwitch-track {
+            background-color: rgba($theme-blue, 0.3);
+          }
+        }
+      }
+
+      .term-img-box {
+        @include border-radius(12px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background: #fff;
+        padding: 12px;
+        img {
+          width: 100%;
+        }
+      }
+
+      .term-claimAssist-box {
+        @include border-radius(0px 0px 12px 12px);
+        border: 1px dashed #203864;
+        border-top: none;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 0%,
+          #fff 100%
+        );
+        box-shadow: 0px 10px 12px 0px rgba(30, 113, 236, 0.1);
+        padding: 12px;
+        position: relative;
+        .termboxblink {
+          @include position(absolute, $top: -11px, $left: 12px);
+          @include border-radius(30px);
+          background: #f8e007;
+          color: $black;
+          padding: 4px 8px 6px;
+          display: inline;
+          animation: boxblink infinite 1s linear;
+
+          .blink_text {
+            @include fontSize(9px);
+            height: 9px;
+            font-weight: 500;
+            animation: blinktext 1s linear infinite;
+            margin-bottom: 0;
+          }
+
+          @keyframes blinktext {
+            0% {
+              opacity: 1;
+            }
+
+            50% {
+              opacity: 0.1;
+            }
+
+            100% {
+              opacity: 1;
+            }
+          }
+
+          @keyframes boxblink {
+            0% {
+              scale: 1;
+            }
+
+            50% {
+              scale: 0.9;
+            }
+
+            100% {
+              scale: 1;
+            }
+          }
+        }
+
+        h5 {
+          @include fontSize(16px);
+          font-weight: 500;
+          margin-bottom: 8px;
+        }
+        p {
+          @include fontSize(11px);
+          font-weight: 400;
+          margin-bottom: 8px;
+          color: lighten($color: #000000, $amount: 50%);
+        }
+        .claim-link-req {
+          @include fontSize(11px);
+          font-weight: 400;
+          color: $theme-lightgreen;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          svg {
+            height: 14px;
+            width: 14px;
+            animation: moveLeftRight 1s infinite ease-in-out;
+          }
+          @keyframes moveLeftRight {
+            0%,
+            100% {
+              transform: translateX(0);
+            }
+            50% {
+              transform: translateX(5px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    margin-right: 0px;
+    margin-left: 0px;
+
+    .MuiCheckbox-root {
+      padding: 0px;
+      margin-right: 2px;
+    }
+
+    .MuiSvgIcon-root {
+      // color: $theme-green;
+      margin-right: 4px;
+    }
+
+    .Mui-checked {
+      color: $theme-green;
+    }
+
+    .MuiTypography-root {
+      @include fontSize(13px);
+      font-family: "poppins";
+      font-weight: 400;
+    }
+  }
+
+  .quoteRightSection {
+    .tabs-section {
+      .MuiTabs-flexContainer {
+        justify-content: center;
+        max-width: 636px;
+        margin: auto;
+        outline: 1px dashed $theme-lightgreen;
+        outline-offset: -1px;
+        border-radius: 100px;
+        overflow: hidden;
+
+        .MuiTab-root {
+          min-height: 37px;
+          text-transform: capitalize;
+          padding: 8px 20px;
+          @include fontSize(14px);
+          font-weight: 400;
+          font-family: "poppins";
+          color: #000000;
+
+          &.Mui-selected {
+            background: $theme-lightgreen;
+            color: $white;
+          }
+        }
+      }
+
+      .MuiTabs-indicator {
+        display: none;
+      }
+
+      .tabPanel {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0;
+      }
+    }
+
+    .toggleTermPlans {
+      padding: 0px 12px;
+      text-align: center;
+
+      .MuiToggleButtonGroup-root {
+        outline: 1px dashed $theme-lightgreen;
+        outline-offset: -1px;
+        overflow: hidden;
+      }
+
+      button {
+        @include fontSize(14px);
+        line-height: 14px;
+        text-transform: initial;
+        color: $black;
+        padding: 8px 20px;
+        border: none;
+        min-height: 38px;
+        font-weight: 400;
+
+        &.Mui-selected {
+          background: $theme-lightgreen;
+          color: $white;
+        }
+      }
+    }
+
+    .no-quote-box {
+      text-align: center;
+      padding: 24px;
+
+      // position: relative;
+      // top: 50%;
+      // transform: translateY(-50%);
+      h5 {
+        @include fontSize(20px);
+        font-weight: 500;
+        margin-top: 12px;
+        margin-bottom: 4px;
+      }
+
+      p {
+        @include fontSize(14px);
+        font-weight: 400;
+        opacity: 0.6;
+      }
+      img {
+        animation: swing 8s ease-in-out infinite;
+        // transform-origin: 0px center;
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(0);
+        }
+        25% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+        75% {
+          transform: rotate(-5deg);
+        }
+        100% {
+          transform: rotate(0);
+        }
+      }
+    }
+  }
+
+  // #{$quote}Section {
+  //     background-color: rgba($theme-yellow, 0.2);
+  //     @include border-radius(16px);
+  //     padding: 0px 12px;
+  //     margin-top: 12px;
+
+  //     .topSection {
+  //         padding-left: 4px;
+  //         padding-right: 4px;
+  //         margin-top: 12px;
+  //         margin-bottom: 12px;
+
+  //         h2 {
+  //             @include fontSize(24px);
+  //             margin-bottom: 4px;
+  //         }
+
+  //         p {
+  //             @include fontSize(14px);
+  //             color: rgba($black, 0.6);
+  //         }
+
+  //         .planSelection {
+  //             // background: $white;
+  //             display: inline-flex;
+  //             align-items: center;
+  //             padding: 4px;
+
+  //             .inputField {
+  //                 @include border-radius(6px);
+  //                 background: $white;
+  //                 width: 150px;
+  //             }
+  //         }
+  //     }
+  // }
+
+  .comparison_quote {
+    background: $white;
+    @include border-radius(12px 0px 0px 12px);
+    @include box-shadow(0px 0px 16px rgba($theme-blue, 0.1));
+    @include position(fixed, $right: 0px, $top: 50%);
+    padding: 12px;
+    width: 190px;
+
+    p {
+      @include fontSize(10px);
+    }
+
+    ul {
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+          height: 40px;
+        }
+
+        span {
+          color: $red;
+          @include fontSize(14px);
+          font-weight: 500;
+        }
+
+        .cross {
+          cursor: pointer;
+          position: relative;
+          height: 16px;
+          width: 16px;
+
+          &:before {
+            background: $black;
+            content: "";
+            @include position(absolute, $left: 3px, $top: 3px);
+            transform: rotate(45deg);
+            height: 10px;
+            width: 1.5px;
+          }
+
+          &:after {
+            @extend :before;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+.quoteoverlay {
+  @include position(fixed, $top: 0px, $left: 0px);
+  height: 100%;
+  width: 100%;
+  z-index: 999;
+}

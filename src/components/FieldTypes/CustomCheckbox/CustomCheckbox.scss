@@ -1,0 +1,28 @@
+@import "../../../SCSS/CommonSCSS/mixins.scss";
+
+.checkbox {
+  .MuiTypography-root {
+    @include fontSize(13px);
+    margin-left: 8px;
+    text-align: left;
+  }
+
+  .green_font {
+    color: #00b587;
+  }
+
+  .checkIcon {
+    position: relative;
+
+    &:before {
+      @include position(absolute, $top: 2px, $left: 5px);
+      content: "";
+      display: block;
+      width: 4px;
+      height: 8px;
+      border: solid #fff;
+      border-width: 0 1.5px 1.5px 0;
+      transform: rotate(45deg);
+    }
+  }
+}

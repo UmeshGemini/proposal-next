@@ -1,0 +1,30 @@
+@import "./../../../../SCSS/CommonSCSS/mixins.scss";
+
+.searchBox {
+  height: 46px;
+  font-family: "Montserrat", sans-serif;
+  @include border-radius(16px !important);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  width: 360px;
+  position: relative;
+  background: $white;
+  svg {
+    height: 20px;
+    @include position(absolute, $left: 10px, $top: 12px);
+    color: #585858;
+  }
+  .MuiInputBase-root {
+    border: none;
+  }
+  input {
+    border: none !important;
+    @include fontSize(14px);
+    height: 46px;
+    width: 100%;
+    padding: 0px 12px 0px 34px;
+  }
+  fieldset {
+    border: none !important;
+  }
+}

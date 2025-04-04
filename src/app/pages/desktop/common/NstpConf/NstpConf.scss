@@ -1,0 +1,11 @@
+.msgBox {
+  box-shadow: 2px 4px 10px rgba(59, 9, 9, 0.1);
+  width: fit-content;
+  margin: 0 auto;
+  margin-top: 10rem;
+
+  @media (max-width: 767px) {
+    box-shadow: none;
+    margin-top: 2rem;
+  }
+}

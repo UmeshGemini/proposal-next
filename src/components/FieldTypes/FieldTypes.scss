@@ -1,0 +1,343 @@
+@import "../../SCSS/CommonSCSS/mixins.scss";
+
+.inputField {
+  position: relative;
+  width: 100%;
+
+  label,
+  input {
+    letter-spacing: 0px;
+    @include fontSize(14px);
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+  }
+
+  label {
+    transform: translate(14px, 10px) scale(1);
+    top: 0px;
+    opacity: 1;
+    padding-right: 15px;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &.vehicleNumberField {
+    &:before {
+      @include position(absolute, $top: 0, $left: 0);
+      content: "";
+      background: url("./../../../public/images/ind.svg") no-repeat 0 0 /30px;
+      width: 40px;
+      height: 44px;
+      @include border-radius(5px 0px 0px 5px);
+      z-index: 4;
+    }
+
+    input {
+      padding: 10px 12px 11px 42px;
+      @include fontSize(20px);
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+  }
+
+  &.datepicker {
+    &:before {
+      @include position(absolute, $top: calc(50% - 7px), $right: 12px);
+      content: "";
+      background: url("./../../../public/images/calender_icon.svg") no-repeat 0
+        0 /13px;
+      width: 13px;
+      height: 13px;
+      z-index: 4;
+    }
+    .MuiTextField-root {
+      width: 100% !important;
+    }
+
+    fieldset {
+      border-color: rgba(0, 0, 0, 0.2);
+    }
+    svg {
+      display: inherit;
+    }
+    label {
+      color: rgba(0, 0, 0, 0.6);
+    }
+  }
+
+  &.nativeSelect {
+    position: relative;
+
+    &:before {
+      @include position(absolute, $right: 10px, $top: 17px);
+      content: "";
+      border: solid $black;
+      border-width: 0px 0px 1.4px 1.4px;
+      transform: rotate(-45deg);
+      transition: all 0.3s ease;
+      transform-origin: center;
+      height: 6px;
+      width: 6px;
+      z-index: 1;
+    }
+
+    .MuiInputLabel-shrink {
+      background: $primary;
+      @include border-radius(8px);
+      padding-left: 4px;
+      padding-right: 12px;
+      transform: translate(8px, -9px) scale(0.75);
+    }
+
+    .MuiInputBase-root {
+      margin-top: 0;
+      height: 44px;
+
+      &:before {
+        display: none;
+      }
+
+      &:after {
+        display: none;
+      }
+
+      .MuiNativeSelect-select {
+        padding: 11.7px 24px 11.6px 10px;
+        @include fontSize(13px);
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 8px;
+        // height: 44px;
+        font-family: "poppins", "sans-serif";
+
+        &:focus {
+          border-color: $primary !important;
+        }
+
+        :nth-child(1) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .infoMessage {
+    background: $white;
+    @include border-radius(20px);
+    @include position(absolute, $left: -7px, $top: 9px);
+    height: 16px;
+    width: 16px;
+    z-index: 9;
+
+    svg {
+      color: #000;
+      opacity: 0.6;
+      display: inherit;
+      @include fontSize(14px);
+      margin-top: 1px;
+      margin-left: 1px;
+    }
+  }
+
+  input {
+    // height: 20px;
+    @include border-radius(8px);
+    background: $white;
+    padding: 12px 12px;
+  }
+
+  .MuiInputBase-root {
+    // @include box-shadow(0px 3px 6px rgba($black, 0.1));
+    background: $white;
+    @include border-radius(8px);
+    height: 44px;
+    padding-right: 20px !important;
+  }
+
+  .MuiInputBase-multiline {
+    height: auto;
+    font-family: "poppins", "sans-serif";
+  }
+
+  .MuiAutocomplete-root {
+    &:before {
+      @include position(absolute, $right: 14px, $top: 17px);
+      content: "";
+      border: solid $black;
+      border-width: 0px 0px 1.4px 1.4px;
+      transform: rotate(-45deg);
+      transition: all 0.3s ease;
+      transform-origin: center;
+      height: 6px;
+      width: 6px;
+      z-index: 1;
+    }
+
+    .MuiAutocomplete-inputRoot {
+      @include border-radius(8px);
+      padding: 0px 0px 0px 8px;
+      height: 44px;
+    }
+
+    .MuiAutocomplete-clearIndicator {
+      background: #fff;
+      height: 18px;
+      width: 18px;
+      border: 1px solid #ccc;
+
+      svg {
+        display: block;
+        height: 12px;
+        color: theme-yellow;
+      }
+    }
+  }
+
+  .MuiAutocomplete-endAdornment {
+    display: none;
+  }
+
+  .MuiAutocomplete-hasClearIcon {
+    .MuiFormControl-root {
+      .MuiOutlinedInput-root {
+        height: 44px;
+        @include border-radius(8px);
+        padding: 8px 0px 7px 8px;
+
+        .MuiButtonBase-root {
+          height: 20px;
+
+          &.MuiAutocomplete-clearIndicator {
+            display: none;
+          }
+
+          .MuiChip-label {
+            @include fontSize(10px);
+          }
+
+          &#ArrowDropDownIcon {
+            display: none !important;
+          }
+
+          svg {
+            display: block;
+          }
+
+          .MuiTouchRipple-root {
+            display: none;
+          }
+
+          .MuiChip-deleteIcon {
+            color: rgba(0, 0, 0, 0.26);
+            @include fontSize(18px);
+            cursor: pointer;
+            margin: 0px 2px 0 -6px;
+          }
+        }
+
+        .MuiAutocomplete-input {
+          min-width: 0px !important;
+          padding: 4.5px 4px 7.5px 5px;
+        }
+      }
+    }
+  }
+
+  .MuiAutocomplete-popper {
+    // @include box-shadow(0px 4px 12px rgba(0, 0, 0, 0.2) !important);
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+      0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12) !important;
+    @include border-radius(0px 0px 8px 8px);
+    // z-index: 999;
+
+    .MuiAutocomplete-paper {
+      @include box-shadow(0px 4px 12px rgba(0, 0, 0, 0));
+    }
+
+    ul {
+      // @include box-shadow(0px 4px 12px rgba(0,0,0,0.2));
+      box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      max-height: 244px;
+      overflow-y: auto;
+      // z-index: 999;
+    }
+
+    .MuiAutocomplete-option {
+      @include fontSize(13px);
+      line-height: 18px;
+      min-height: 32px;
+    }
+  }
+
+  .MuiInputLabel-shrink {
+    color: $grey;
+    transform: translate(14px, -11px) scale(0.75);
+    font-weight: 500;
+    max-width: calc(116% - 32px);
+  }
+
+  .MuiSelect-select {
+    text-align: left;
+    padding: 14px 12px;
+    @include fontSize(14px);
+    font-weight: 500;
+    @include border-radius(8px);
+    font-family: "Poppins", sans-serif;
+    padding-right: 16px !important;
+
+    &:before {
+      @include position(absolute, $right: 10px, $top: 20px);
+      content: "";
+      border: solid $black;
+      border-width: 0px 0px 1.6px 1.6px;
+      transform: rotate(-45deg);
+      // transition: all 0.3s ease;
+      transform-origin: left center;
+      height: 6px;
+      width: 6px;
+    }
+  }
+
+  fieldset {
+    border-color: rgba(0, 0, 0, 0.2);
+    @include border-radius(8px);
+    border-width: 1px;
+    font-weight: 500;
+  }
+
+  .error {
+    color: $secondary;
+    @include fontSize(11px);
+    text-align: right;
+    @include position(absolute, $right: 0px, $bottom: -16px);
+  }
+}
+
+.MuiMenu-paper {
+  max-height: 200px !important;
+
+  .MuiMenu-list {
+    .MuiMenuItem-root {
+      @include fontSize(14px);
+    }
+  }
+}
+
+.fieldbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: $white;
+  // border: 1px solid rgba($black, 0.1);
+  // box-shadow: 0px 4px 12px rgba($black, 0.1);
+  @include border-radius(8px);
+  .error {
+    color: $secondary;
+    @include fontSize(11px);
+    text-align: right;
+    @include position(absolute, $right: 0px, $bottom: -16px);
+  }
+}
