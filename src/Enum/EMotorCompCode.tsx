@@ -1,0 +1,16 @@
+export enum EMotorCompCode {
+  HDFC = "G012",
+  ICICI = "G002",
+  GO_DIGIT = "G033",
+  RSA = "G009",
+  BAJAJ = "G001",
+  ACKO = "G010",
+  TATA = "G032",
+  Kotak = "G031",
+  Reliance = "G008",
+  FutureGenerali = "G017",
+  IffcoTokio = "G003",
+  Magma = "G026",
+  National = "G004",
+  SBI = "G022",
+}
