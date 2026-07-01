@@ -16,6 +16,7 @@ import {
   calculateAgeInDays,
 } from "../../../SupportingFiles/HelpingFunction";
 import useIsMobile from "../../../SupportingFiles/MobileProvider";
+import { isSbiCarPosBreakinProduct } from "@/utils/motorBreakinHelpers";
 
 const ReviewDetailsContainer = () => {
   const isMobile = useIsMobile();
@@ -265,6 +266,12 @@ const ReviewDetailsContainer = () => {
   const dispatch = useAppDispatch();
 
   const CREATE_PROPOSAL = () => {
+    const companyCode =
+      SELECTED_QUOTE_DATA.quotationDetail?.CompanyDetails.company_code;
+    const productCode =
+      SELECTED_QUOTE_DATA.quotationDetail?.productDetails?.product_code;
+    const isSbiPosBreakin = isSbiCarPosBreakinProduct(companyCode, productCode);
+
     const onSuccess = (res: any) => {
       const results = res;
       const error = results.error;
@@ -272,6 +279,24 @@ const ReviewDetailsContainer = () => {
       setLoader(false);
       if (error) {
         const message = results.message;
+        if (
+          isSbiPosBreakin &&
+          (message === "Inspection status pending" ||
+            message === "Inspection not recommended")
+        ) {
+          const breakinId =
+            results.BreakinId || results.response?.BreakinId || "";
+          if (breakinId) {
+            dispatch(
+              CarSlice.actions.BULK_UPDATE({
+                ...Car,
+                create_proposal_response: { BreakinId: breakinId, message },
+              })
+            );
+            navigate(`${CAR_ROUTES.INSPECTION_CONFIRMATION}`);
+            return;
+          }
+        }
         toast.error(`${message}`);
         setLoader(false);
       } else {
@@ -421,6 +446,15 @@ const ReviewDetailsContainer = () => {
           !VEHICLE_DETAILS.prev_cng_cover ||
           !VEHICLE_DETAILS.prev_depth_cover ||
           (!VEHICLE_DETAILS.prev_rti_cover && PLAN_TYPE)
+        ) {
+          CAR_SERVICES.CREATE_INSPECTION(onSuccess, onError, param);
+        } else {
+          CAR_SERVICES.CREATE_PROPOSAL(onSuccess, onError, param);
+        }
+      } else if (isSbiPosBreakin) {
+        if (
+          calculateAgeInDays(ADD_FORM.policy_expiry_date.value) > 0 &&
+          !breakInStatus
         ) {
           CAR_SERVICES.CREATE_INSPECTION(onSuccess, onError, param);
         } else {

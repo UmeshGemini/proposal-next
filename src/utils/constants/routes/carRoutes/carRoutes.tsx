@@ -8,11 +8,11 @@ function CarRoutes() {
       state.Car.SELECTED_QUOTE_DATA.quotationDetail?.CompanyDetails.company_code
   );
 
-  return (
-    <>
-      {company_code === MOTOR_COMPANY_CODES.National ? NATIONAL_ROUTES : null}
-    </>
-  );
+  const usesNationalProposalFlow =
+    company_code === MOTOR_COMPANY_CODES.National ||
+    company_code === MOTOR_COMPANY_CODES.SBI;
+
+  return <>{usesNationalProposalFlow ? NATIONAL_ROUTES : null}</>;
 }
 
 export default CarRoutes;

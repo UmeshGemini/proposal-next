@@ -1,4 +1,4 @@
-export enum MOTOR_COMPANY_CODES {
+export enum EMotorCompCode {
   HDFC = "G012",
   ICICI = "G002",
   GO_DIGIT = "G033",
